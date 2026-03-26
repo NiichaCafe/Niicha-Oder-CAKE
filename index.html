@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ສັ່ງເຄັກ Online - Niicha Cafe</title>
+    <style>
+        /* ຕັ້ງຄ່າຟອນ ແລະ ສີພື້ນຫຼັງ */
+        body { 
+            font-family: 'Phetsarath OT', sans-serif; 
+            background-color: #EFDECE; /* ສີຊົມພູອ່ອນໆ */
+            margin: 0; 
+            padding: 20px; 
+            color: #444; 
+        }
+
+        /* ກອບເນື້ອຫາຫຼັກ */
+        .container { 
+            max-width: 600px; 
+            margin: auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+        }
+
+        h1 { text-align: center; color: #689080; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 30px; }
+
+        /* --- ສ່ວນສະແດງຮູບເຄັກ --- */
+        .cake-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .cake-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cake-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover; /* ໃຫ້ຮູບພໍດີກັບກອບ */
+        }
+
+        .cake-info {
+            padding: 10px;
+        }
+
+        .cake-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .cake-price {
+            color: #689080;
+            font-weight: bold;
+        }
+
+        /* --- ສ່ວນຟອມສັ່ງຊື້ --- */
+        .form-section {
+            border-top: 2px dashed #eee;
+            padding-top: 20px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        
+        select, input[type="text"], input[type="datetime-local"] { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+            font-size: 1em;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #d63384;
+            box-shadow: 0 0 5px rgba(214, 51, 132, 0.2);
+        }
+
+        /* ປຸ່ມສັ່ງຊື້ */
+        .btn-order { 
+            background-color: #689080; 
+            color: white; 
+            border: none; 
+            width: 100%; 
+            padding: 18px; 
+            border-radius: 12px; 
+            font-size: 1.2em; 
+            cursor: pointer; 
+            margin-top: 20px; 
+            font-weight: bold; 
+            transition: background-color 0.2s;
+        }
+        
+        .btn-order:hover { background-color: #689080; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Niicha Cafe</h1>
+    <p class="subtitle">ເລືອກເຄັກທີ່ເຈົ້າມັກ ຈາກເມນູດ້ານລຸ່ມນີ້:</p>
+
+    <div class="cake-gallery">
+        
+        <div class="cake-card">
+            <img src="https://scontent.fvte5-1.fna.fbcdn.net/v/t39.30808-6/524402423_1080550230839720_4623121222871797821_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=P8_sNyUqPwUQ7kNvwHCKTpW&_nc_oc=AdqzRyDTDmu4kLe05BHeQoI3Nhn7WY6rEZtPMsa0qdq6TUK-LX5fh2UTm6-O-Q34MJQ&_nc_zt=23&_nc_ht=scontent.fvte5-1.fna&_nc_gid=fhpQc8hAabuM0z02KSSEWw&_nc_ss=7a32e&oh=00_AfyglV5w743br4AbwcFt6x6kyoEBkpIL2epzrHvLqqp3MQ&oe=69CAC3F9" alt="Matcha on Cloud Cake">
+            <div class="cake-info">
+                <div class="cake-name">Matcha on Cloud Cake</div>
+                <div class="cake-price">250,000 ກີບ/1ປອນ</div>
+		<div class="cake-price">350,000 ກີບ/2ປອນ</div>
+		<div class="cake-price">450,000 ກີບ/3ປອນ</div>
+		<div class="cake-price">550,000 ກີບ/4ປອນ</div>
+		<div class="cake-price">650,000 ກີບ/5ປອນ</div>
+            </div>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://scontent.fvte1-2.fna.fbcdn.net/v/t39.30808-6/494507817_1016284837266260_2682642122509470488_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=aEsrFeZmKt4Q7kNvwEY_NuT&_nc_oc=AdpVhysRmkrcMj3pSKjBPesIO55th3RLrd0yUbQgxehaXDwH3tIN9G32fLRn5L47Vsw&_nc_zt=23&_nc_ht=scontent.fvte1-2.fna&_nc_gid=RXYlixlsrk_AkCehP6jIUA&_nc_ss=7a32e&oh=00_Afy_EL20snEhMRbcNYu9QVaL4SPQmRAvKClnavt4caOg_A&oe=69CAD2B1" alt="Banoffee cake">
+            <div class="cake-info">
+                <div class="cake-name">Banoffee cake</div>
+                <div class="cake-price">250,000 ກີບ/1ປອນ</div>
+		<div class="cake-price">350,000 ກີບ/2ປອນ</div>
+		<div class="cake-price">450,000 ກີບ/3ປອນ</div>
+		<div class="cake-price">550,000 ກີບ/4ປອນ</div>
+		<div class="cake-price">650,000 ກີບ/5ປອນ</div>
+
+            </div>
+        </div>
+
+        <div class="cake-card">
+            <img src="https://scontent.fvte1-2.fna.fbcdn.net/v/t39.30808-6/600909106_1203689801859095_916725096588383483_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=hAjQkuaqoFwQ7kNvwGW4eM8&_nc_oc=AdqhnWIS-X2u9JhT3IVC8IATQm7vGqKGrNZrkxGuOsdZKQCJhaW7RlrGI-zYAcyJJoY&_nc_zt=23&_nc_ht=scontent.fvte1-2.fna&_nc_gid=U5yAQNokaY4ITWNDOu_AOw&_nc_ss=7a32e&oh=00_AfyWpSEb4IYKr8AaTInBlEcO2S0EsP1V6SbRGXHFclY29w&oe=69CAB97E" alt="Ballantines Cake">
+            <div class="cake-info">
+                <div class="cake-name">Ballantines Cake</div>
+                <div class="cake-price">250,000 ກີບ/1ປອນ</div>
+		<div class="cake-price">350,000 ກີບ/2ປອນ</div>
+		<div class="cake-price">450,000 ກີບ/3ປອນ</div>
+		<div class="cake-price">550,000 ກີບ/4ປອນ</div>
+		<div class="cake-price">650,000 ກີບ/5ປອນ</div>
+
+            </div>
+        </div>
+
+	<div class="cake-card">
+            <img src="https://scontent.fvte1-2.fna.fbcdn.net/v/t39.30808-6/600909106_1203689801859095_916725096588383483_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=hAjQkuaqoFwQ7kNvwGW4eM8&_nc_oc=AdqhnWIS-X2u9JhT3IVC8IATQm7vGqKGrNZrkxGuOsdZKQCJhaW7RlrGI-zYAcyJJoY&_nc_zt=23&_nc_ht=scontent.fvte1-2.fna&_nc_gid=U5yAQNokaY4ITWNDOu_AOw&_nc_ss=7a32e&oh=00_AfyWpSEb4IYKr8AaTInBlEcO2S0EsP1V6SbRGXHFclY29w&oe=69CAB97E" alt="Ballantines Cake">
+            <div class="cake-info">
+                <div class="cake-name">Ballantines Cake</div>
+                <div class="cake-price">250,000 ກີບ/1ປອນ</div>
+		<div class="cake-price">350,000 ກີບ/2ປອນ</div>
+		<div class="cake-price">450,000 ກີບ/3ປອນ</div>
+		<div class="cake-price">550,000 ກີບ/4ປອນ</div>
+		<div class="cake-price">650,000 ກີບ/5ປອນ</div>
+
+	    </div>
+   	</div>
+	
+	<div class="cake-card">
+            <img src="https://scontent.fvte1-2.fna.fbcdn.net/v/t39.30808-6/600909106_1203689801859095_916725096588383483_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=hAjQkuaqoFwQ7kNvwGW4eM8&_nc_oc=AdqhnWIS-X2u9JhT3IVC8IATQm7vGqKGrNZrkxGuOsdZKQCJhaW7RlrGI-zYAcyJJoY&_nc_zt=23&_nc_ht=scontent.fvte1-2.fna&_nc_gid=U5yAQNokaY4ITWNDOu_AOw&_nc_ss=7a32e&oh=00_AfyWpSEb4IYKr8AaTInBlEcO2S0EsP1V6SbRGXHFclY29w&oe=69CAB97E" alt="Ballantines Cake">
+            <div class="cake-info">
+                <div class="cake-name">Ballantines Cake</div>
+                <div class="cake-price">250,000 ກີບ/1ປອນ</div>
+		<div class="cake-price">350,000 ກີບ/2ປອນ</div>
+		<div class="cake-price">450,000 ກີບ/3ປອນ</div>
+		<div class="cake-price">550,000 ກີບ/4ປອນ</div>
+		<div class="cake-price">650,000 ກີບ/5ປອນ</div>
+	  </div>
+        </div>
+
+	<div class="cake-card">
+            <img src="https://scontent.fvte1-2.fna.fbcdn.net/v/t39.30808-6/600909106_1203689801859095_916725096588383483_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=hAjQkuaqoFwQ7kNvwGW4eM8&_nc_oc=AdqhnWIS-X2u9JhT3IVC8IATQm7vGqKGrNZrkxGuOsdZKQCJhaW7RlrGI-zYAcyJJoY&_nc_zt=23&_nc_ht=scontent.fvte1-2.fna&_nc_gid=U5yAQNokaY4ITWNDOu_AOw&_nc_ss=7a32e&oh=00_AfyWpSEb4IYKr8AaTInBlEcO2S0EsP1V6SbRGXHFclY29w&oe=69CAB97E" alt="Ballantines Cake">
+            <div class="cake-info">
+                <div class="cake-name">Ballantines Cake</div>
+                <div class="cake-price">250,000 ກີບ/1ປອນ</div>
+		<div class="cake-price">350,000 ກີບ/2ປອນ</div>
+		<div class="cake-price">450,000 ກີບ/3ປອນ</div>
+		<div class="cake-price">550,000 ກີບ/4ປອນ</div>
+		<div class="cake-price">650,000 ກີບ/5ປອນ</div>
+	  </div>
+        </div>
+
+	
+	</div>
+        
+    <div class="form-section">
+        <h3 style="text-align: center; color: #689080;">ຟອມສັ່ງຊື້</h3>
+        
+        <div class="form-group">
+            <label>ເລືອກລົດຊາດເຄັກ:</label>
+            <select id="cakeType">
+                <option value="ຊັອກໂກແລັດ">Ballantines Cake</option>
+                <option value="ສະຕໍເບີຣີ">Strawberry Shortcake</option>
+                <option value="ວານິລາ">Banoffee cake</option>
+		<option value="ວານິລາ">Matcha on Cloud Cake</option>
+		<option value="ວານິລາ">Vanilla Dream</option>
+		<option value="ວານິລາ">Coconut Cake</option>
+		<option value="ວານິລາ">Fruity Lover</option>
+		<option value="ວານິລາ">Crap Cake</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>ຂະໜາດ:</label>
+            <select id="size">
+                <option value="1 ປອນ">1 ປອນ</option>
+                <option value="2 ປອນ">2 ປອນ</option>
+                <option value="3 ປອນ">3 ປອນ</option>
+		<option value="4 ປອນ">4 ປອນ</option>
+		<option value="5 ປອນ">5 ປອນ</option>
+		<option value="10 ປອນ">10 ປອນ</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>ຂໍ້ຄວາມເທິງໜ້າເຄັກ (ຖ້າມີ):</label>
+            <input type="text" id="message" placeholder="ເຊັ່ນ: Happy Birthday Tom">
+        </div>
+
+        <div class="form-group">
+            <label>ວັນທີ ແລະ ເວລາຮັບ:</label>
+            <input type="datetime-local" id="pickupDate">
+        </div>
+
+        <button class="btn-order" onclick="sendOrder()">ສັ່ງຜ່ານ WhatsApp</button>
+    </div>
+
+</div>
+
+<script>
+    function sendOrder() {
+        const cake = document.getElementById('cakeType').value;
+        const size = document.getElementById('size').value;
+        const msg = document.getElementById('message').value;
+        const date = document.getElementById('pickupDate').value;
+        
+        // ກວດສອບວ່າຍັງບໍ່ໄດ້ເລືອກວັນທີ
+        if(!date) {
+            alert('ກະລຸນາເລືອກວັນທີ ແລະ ເວລາຮັບເຄັກ');
+            return;
+        }
+
+        // ຈັດຮູບແບບຂໍ້ຄວາມທີ່ຈະສົ່ງ
+        const text = `ສະບາຍດີ! ຂ້ອຍສົນໃຈສັ່ງເຄັກ:%0A%0A` +
+                     `- ລົດຊາດ: ${cake}%0A` +
+                     `- ຂະໜາດ: ${size}%0A` +
+                     `- ຂໍ້ຄວາມ: ${msg ? msg : '(ບໍ່ມີ)'}%0A` +
+                     `- ນັດຮັບວັນທີ: ${date}%0A%0A` +
+                     `ກະລຸນາຢືນຢັນ Order ໃຫ້ແນ່ເດີ.`;
+        
+        // *** ປ່ຽນເບີໂທນີ້ເປັນເບີຂອງຮ້ານເຈົ້າ (ເລີ່ມດ້ວຍ 85620...) ***
+        const phone = "8562058475022"; 
+        
+        // ເປີດ Link WhatsApp
+        window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
